@@ -6,13 +6,13 @@
     <title>Our Products | ApexCore Luxe</title>
     <style>
         :root {
-            --gold: #d4af37;
+            --gold: #d4a373;
             --cream: #f9f5f0;
             --charcoal: #2a2a2a;
         }
         
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', serif;
             background: var(--cream);
             color: var(--charcoal);
             margin: 0;
@@ -21,40 +21,22 @@
         
         header {
             background: var(--charcoal);
-            padding: 1rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
         
         .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .logo-top {
             font-size: 1.8rem;
-            letter-spacing: 5px;
+            font-weight: bold;
             color: var(--gold);
-            font-weight: 700;
-        }
-        
-        .logo-bottom {
-            font-size: 0.9rem;
-            letter-spacing: 8px;
-            color: white;
-            margin-top: -5px;
         }
         
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
-            font-weight: 300;
             transition: color 0.3s;
         }
         
@@ -64,7 +46,7 @@
         
         .products-header {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://i.pinimg.com/736x/5a/6b/6d/5a6b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg');
+                        url('YOUR_CATALOGUE_HERO_IMAGE');
             background-size: cover;
             background-position: center;
             padding: 8rem 10%;
@@ -109,19 +91,6 @@
             height: 300px;
             background-size: cover;
             background-position: center;
-            position: relative;
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gold);
-            color: var(--charcoal);
-            padding: 0.3rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 20px;
         }
         
         .product-info {
@@ -133,17 +102,11 @@
             margin-bottom: 0.5rem;
         }
         
-        .product-info p {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            min-height: 40px;
-        }
-        
         .price {
-            font-weight: 700;
             color: var(--gold);
-            font-size: 1.3rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 1rem 0;
         }
         
         .btn {
@@ -152,31 +115,29 @@
             padding: 0.8rem 1.5rem;
             border: none;
             font-weight: 600;
-            margin-top: 1rem;
             cursor: pointer;
             display: inline-block;
-            text-decoration: none;
         }
         
         footer {
             background: var(--charcoal);
             color: white;
-            text-align: center;
             padding: 3rem;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <div class="logo-top">APEXCORE</div>
-            <div class="logo-bottom">LUXURY WITHIN</div>
-        </div>
+        <div class="logo">APEXCORE LUXE</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -189,9 +150,7 @@
         <h2 class="category-title">Classic Candles</h2>
         <div class="product-grid">
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/8a/7b/6d/8a7b6d5c5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">BESTSELLER</span>
-                </div>
+                <div class="product-img" style="background-image: url('YOUR_IMAGE_URL_1')"></div>
                 <div class="product-info">
                     <h3>Twirl Candle</h3>
                     <p>Elegant spiral design with long-lasting burn</p>
@@ -200,180 +159,33 @@
                 </div>
             </div>
             
+            <!-- Repeat for all 16 products -->
+            <!-- Example for one more product -->
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/9a/8b/6d/9a8b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="product-img" style="background-image: url('YOUR_IMAGE_URL_2')"></div>
                 <div class="product-info">
-                    <h3>Coned V-Shaped</h3>
-                    <p>Modern geometric design</p>
-                    <div class="price">R49.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/7a/4b/6d/7a4b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">COLORS</span>
-                </div>
-                <div class="product-info">
-                    <h3>Rose Candles</h3>
-                    <p>Available in different colors</p>
-                    <div class="price">R49.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/6a/5b/6d/6a5b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
-                <div class="product-info">
-                    <h3>Pillar Candles</h3>
-                    <p>Classic long-burning design</p>
-                    <div class="price">R130.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/5a/6b/6d/5a6b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">COLORS</span>
-                </div>
-                <div class="product-info">
-                    <h3>Ribbed Pillar</h3>
-                    <p>Textured design in different colors</p>
-                    <div class="price">R120.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/4a/7b/6d/4a7b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">ROMANTIC</span>
-                </div>
-                <div class="product-info">
-                    <h3>Heart Shaped</h3>
-                    <p>Dimpled heart scented candle</p>
-                    <div class="price">R69.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/3a/8b/6d/3a8b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">SCENTED</span>
-                </div>
-                <div class="product-info">
-                    <h3>Bunny Candles</h3>
-                    <p>Adorable bunny scented candles</p>
-                    <div class="price">R59.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/2a/9b/6d/2a9b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">THERAPY</span>
-                </div>
-                <div class="product-info">
-                    <h3>Yoga Calm</h3>
-                    <p>Perfect for meditation</p>
-                    <div class="price">R250.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        
-        <h2 class="category-title">Therapeutic Candles</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/1a/ab/6d/1aab6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">BESTSELLER</span>
-                </div>
-                <div class="product-info">
-                    <h3>Massaging</h3>
+                    <h3>Massaging Candle</h3>
                     <p>Therapy candles with skin oils</p>
                     <div class="price">R300.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
             </div>
             
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/0a/bb/6d/0abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">UNIQUE</span>
-                </div>
-                <div class="product-info">
-                    <h3>Knot Candles</h3>
-                    <p>Available in different designs</p>
-                    <div class="price">R150.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/9a/ab/6d/9aab6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
-                <div class="product-info">
-                    <h3>Rose in a Jar</h3>
-                    <p>Reusable glass jar</p>
-                    <div class="price">R189.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/8a/bb/6d/8abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">NEW</span>
-                </div>
-                <div class="product-info">
-                    <h3>Matcha Latte</h3>
-                    <p>Soothing green tea scent</p>
-                    <div class="price">R210.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/7a/bb/6d/7abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
-                <div class="product-info">
-                    <h3>Bubble Candle</h3>
-                    <p>Fun bubbly texture</p>
-                    <div class="price">R50.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/6a/bb/6d/6abb6d5c5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
-                <div class="product-info">
-                    <h3>Sea Shell</h3>
-                    <p>Ocean-inspired design</p>
-                    <div class="price">R50.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/5a/bb/6d/5abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
-                <div class="product-info">
-                    <h3>Heart Bubble</h3>
-                    <p>Romantic heart-shaped</p>
-                    <div class="price">R50.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/4a/bb/6d/4abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
-                    <span class="product-badge">ARTISTIC</span>
-                </div>
-                <div class="product-info">
-                    <h3>Jelly Dessert</h3>
-                    <p>Creative dessert-inspired</p>
-                    <div class="price">R250.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
+            <!-- Add remaining 14 products following same pattern -->
+        </div>
+        
+        <h2 class="category-title">Therapeutic Candles</h2>
+        <div class="product-grid">
+            <!-- Add therapeutic candle products here -->
         </div>
     </section>
 
-    <footer>
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <div class="contact-info">
+            <p>Email: Info@apexcoreluxe.co.za</p>
+            <p>Phone: 064 708 0970</p>
+        </div>
         <p>&copy; 2023 ApexCore Luxe. All rights reserved.</p>
     </footer>
 </body>

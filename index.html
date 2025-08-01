@@ -6,13 +6,13 @@
     <title>ApexCore Luxe | Luxury Scented Candles</title>
     <style>
         :root {
-            --gold: #d4af37;
+            --gold: #d4a373;
             --cream: #f9f5f0;
             --charcoal: #2a2a2a;
         }
         
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', serif;
             background: var(--cream);
             color: var(--charcoal);
             margin: 0;
@@ -21,40 +21,22 @@
         
         header {
             background: var(--charcoal);
-            padding: 1rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
         
         .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .logo-top {
             font-size: 1.8rem;
-            letter-spacing: 5px;
+            font-weight: bold;
             color: var(--gold);
-            font-weight: 700;
-        }
-        
-        .logo-bottom {
-            font-size: 0.9rem;
-            letter-spacing: 8px;
-            color: white;
-            margin-top: -5px;
         }
         
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
-            font-weight: 300;
             transition: color 0.3s;
         }
         
@@ -65,7 +47,7 @@
         .hero {
             height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://i.pinimg.com/736x/3a/4c/2a/3a4c2a7c7f8e9e5e5e5e5e5e5e5e5e5e.jpg');
+                        url('YOUR_HERO_IMAGE_URL');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -74,6 +56,7 @@
             align-items: center;
             text-align: center;
             color: white;
+            padding: 0 10%;
         }
         
         .hero h1 {
@@ -87,7 +70,6 @@
             padding: 1rem 2.5rem;
             border: none;
             font-weight: 600;
-            margin-top: 1rem;
             cursor: pointer;
             transition: all 0.3s;
         }
@@ -146,22 +128,22 @@
         footer {
             background: var(--charcoal);
             color: white;
-            text-align: center;
             padding: 3rem;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <div class="logo-top">APEXCORE</div>
-            <div class="logo-bottom">LUXURY WITHIN</div>
-        </div>
+        <div class="logo">APEXCORE LUXE</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -175,7 +157,7 @@
         <h2>Featured Candles</h2>
         <div class="featured-grid">
             <div class="featured-card">
-                <div class="featured-img" style="background-image: url('https://i.pinimg.com/736x/8a/7b/6d/8a7b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="featured-img" style="background-image: url('YOUR_IMAGE_URL_1')"></div>
                 <div class="featured-info">
                     <h3>Twirl Candle</h3>
                     <div class="price">R60.00</div>
@@ -184,7 +166,7 @@
             </div>
             
             <div class="featured-card">
-                <div class="featured-img" style="background-image: url('https://i.pinimg.com/736x/1a/ab/6d/1aab6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="featured-img" style="background-image: url('YOUR_IMAGE_URL_2')"></div>
                 <div class="featured-info">
                     <h3>Massaging Candle</h3>
                     <div class="price">R300.00</div>
@@ -193,7 +175,7 @@
             </div>
             
             <div class="featured-card">
-                <div class="featured-img" style="background-image: url('https://i.pinimg.com/736x/4a/bb/6d/4abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="featured-img" style="background-image: url('YOUR_IMAGE_URL_3')"></div>
                 <div class="featured-info">
                     <h3>Jelly Dessert</h3>
                     <div class="price">R250.00</div>
@@ -203,7 +185,12 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <div class="contact-info">
+            <p>Email: Info@apexcoreluxe.co.za</p>
+            <p>Phone: 064 708 0970</p>
+        </div>
         <p>&copy; 2023 ApexCore Luxe. All rights reserved.</p>
     </footer>
 </body>
