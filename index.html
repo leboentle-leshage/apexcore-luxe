@@ -3,135 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexCore Luxe | Luxury Scented Candles & Bath Salts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <title>ApexCore Luxe | Luxury Scented Candles</title>
     <style>
         :root {
             --gold: #d4af37;
-            --cream: #f5f0e6;
+            --cream: #f9f5f0;
             --charcoal: #2a2a2a;
-            --taupe: #8b786d;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             background: var(--cream);
             color: var(--charcoal);
             margin: 0;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
-        /* Header with Mobile Menu */
         header {
             background: var(--charcoal);
-            color: white;
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            width: 90%;
-            z-index: 1000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            color: var(--gold);
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-        }
-        
-        nav {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-top {
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        
+        .logo-bottom {
+            font-size: 0.9rem;
+            letter-spacing: 8px;
+            color: white;
+            margin-top: -5px;
         }
         
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 1.5rem;
+            margin: 0 1rem;
             font-weight: 300;
-            letter-spacing: 1px;
             transition: color 0.3s;
-            position: relative;
         }
         
-        nav a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
+        nav a:hover {
+            color: var(--gold);
         }
         
-        nav a:hover:after {
-            width: 100%;
-        }
-        
-        /* Shopping Cart */
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: var(--gold);
-            color: var(--charcoal);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        /* Mobile Menu */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--charcoal);
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                transition: left 0.3s;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav a {
-                margin: 1rem 0;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1594035910387-fea47794261f');
+                        url('https://i.pinimg.com/736x/3a/4c/2a/3a4c2a7c7f8e9e5e5e5e5e5e5e5e5e5e.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -140,20 +74,11 @@
             align-items: center;
             text-align: center;
             color: white;
-            padding: 0 10%;
         }
         
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            letter-spacing: 5px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 2rem;
         }
         
         .btn {
@@ -161,9 +86,8 @@
             color: var(--charcoal);
             padding: 1rem 2.5rem;
             border: none;
-            font-size: 1rem;
             font-weight: 600;
-            letter-spacing: 1px;
+            margin-top: 1rem;
             cursor: pointer;
             transition: all 0.3s;
         }
@@ -172,636 +96,115 @@
             background: white;
             transform: translateY(-3px);
         }
-
-        /* Products Section */
-        .products {
+        
+        .featured {
             padding: 5rem 10%;
-        }
-        
-        .section-title {
             text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            position: relative;
         }
         
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: var(--gold);
-            margin: 1rem auto;
-        }
-        
-        .product-grid {
+        .featured-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
         
-        .product-card {
+        .featured-card {
             background: white;
-            border-radius: 5px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
-            position: relative;
         }
         
-        .product-card:hover {
+        .featured-card:hover {
             transform: translateY(-10px);
         }
         
-        .product-img {
+        .featured-img {
             height: 300px;
             background-size: cover;
             background-position: center;
-            position: relative;
         }
         
-        .product-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gold);
-            color: var(--charcoal);
-            padding: 0.3rem 0.8rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 3px;
-        }
-        
-        .quick-view {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255,255,255,0.9);
-            color: var(--charcoal);
-            border: none;
-            padding: 0.5rem 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .product-card:hover .quick-view {
-            opacity: 1;
-        }
-        
-        .product-info {
+        .featured-info {
             padding: 1.5rem;
         }
         
-        .product-info h3 {
+        .featured-info h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
         }
         
         .price {
-            font-weight: 700;
             color: var(--gold);
+            font-weight: 700;
             font-size: 1.2rem;
             margin: 1rem 0;
         }
         
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1rem;
-            margin-left: 0.5rem;
-        }
-
-        /* Testimonial Slider */
-        .testimonials {
-            background: var(--charcoal);
-            color: white;
-            padding: 4rem 10%;
-            text-align: center;
-        }
-        
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .testimonial {
-            display: none;
-            padding: 0 2rem;
-        }
-        
-        .testimonial.active {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-        
-        .testimonial p {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-        
-        .testimonial span {
-            font-weight: 600;
-            color: var(--gold);
-        }
-        
-        .slider-controls {
-            margin-top: 2rem;
-        }
-        
-        .slider-controls button {
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            margin: 0 0.5rem;
-            transition: all 0.3s;
-        }
-        
-        .slider-controls button:hover {
-            background: var(--gold);
-            color: var(--charcoal);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Shopping Cart Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
-            background: white;
-            margin: 5% auto;
-            padding: 2rem;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 5px;
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .cart-items {
-            margin: 1rem 0;
-        }
-        
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .cart-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-        
-        .cart-total {
-            font-weight: 700;
-            font-size: 1.2rem;
-            text-align: right;
-            margin-top: 1rem;
-        }
-        
-        .checkout-btn {
-            background: var(--gold);
-            color: var(--charcoal);
-            border: none;
-            padding: 0.8rem 2rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 1rem;
-            float: right;
-        }
-
-        /* Newsletter */
-        .newsletter {
-            padding: 4rem 10%;
-            text-align: center;
-            background: var(--cream);
-        }
-        
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-        }
-        
-        .newsletter-form button {
-            background: var(--charcoal);
-            color: white;
-            border: none;
-            padding: 0 1.5rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* Footer */
         footer {
             background: var(--charcoal);
             color: white;
             text-align: center;
             padding: 3rem;
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-        
-        .social-icons {
-            margin-top: 1rem;
-        }
-        
-        .social-icons a {
-            color: white;
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: var(--gold);
-        }
     </style>
 </head>
 <body>
-    <!-- Header with Mobile Menu -->
     <header>
-        <div class="logo">APEXCORE LUXE</div>
-        <div class="menu-toggle">☰</div>
+        <div class="logo">
+            <div class="logo-top">APEXCORE</div>
+            <div class="logo-bottom">LUXURY WITHIN</div>
+        </div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <div class="cart-icon">
-                🛒
-                <span class="cart-count">0</span>
-            </div>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>ELEVATE YOUR SPACE</h1>
-        <p>Handcrafted scented candles and artisanal bath salts designed to transform your home into a sanctuary of luxury and relaxation.</p>
-        <a href="#products" class="btn">SHOP COLLECTION</a>
+    <section class="hero">
+        <h1>Handcrafted Luxury Candles</h1>
+        <p>Premium scented candles designed to elevate your space</p>
+        <a href="products.html" class="btn">Shop Collection</a>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <h2 class="section-title">OUR SIGNATURE COLLECTION</h2>
-        
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd');">
-                    <span class="product-badge">BESTSELLER</span>
-                    <button class="quick-view" data-id="1">QUICK VIEW</button>
-                </div>
-                <div class="product-info">
-                    <h3>Amber Noir Candle</h3>
-                    <p>A rich blend of amber, vanilla, and sandalwood for a warm, inviting atmosphere.</p>
-                    <div class="price">R349.99 <span class="old-price">R399.99</span></div>
-                    <button class="btn add-to-cart" data-id="1">Add to Cart</button>
+    <section class="featured">
+        <h2>Featured Candles</h2>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <div class="featured-img" style="background-image: url('https://i.pinimg.com/736x/8a/7b/6d/8a7b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="featured-info">
+                    <h3>Twirl Candle</h3>
+                    <div class="price">R60.00</div>
+                    <a href="products.html" class="btn">View All</a>
                 </div>
             </div>
             
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2');">
-                    <span class="product-badge">NEW</span>
-                    <button class="quick-view" data-id="2">QUICK VIEW</button>
-                </div>
-                <div class="product-info">
-                    <h3>Lavender Dream Bath Salts</h3>
-                    <p>Pure relaxation with lavender essential oils and Epsom salts to soothe muscles.</p>
-                    <div class="price">R249.99</div>
-                    <button class="btn add-to-cart" data-id="2">Add to Cart</button>
+            <div class="featured-card">
+                <div class="featured-img" style="background-image: url('https://i.pinimg.com/736x/1a/ab/6d/1aab6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="featured-info">
+                    <h3>Massaging Candle</h3>
+                    <div class="price">R300.00</div>
+                    <a href="products.html" class="btn">View All</a>
                 </div>
             </div>
             
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd');">
-                    <span class="product-badge">LIMITED</span>
-                    <button class="quick-view" data-id="3">QUICK VIEW</button>
-                </div>
-                <div class="product-info">
-                    <h3>Citrus Bloom Candle</h3>
-                    <p>An energizing mix of grapefruit, lemon, and orange blossom for a fresh ambiance.</p>
-                    <div class="price">R299.99 <span class="old-price">R349.99</span></div>
-                    <button class="btn add-to-cart" data-id="3">Add to Cart</button>
-                </div>
-            </div>
-            
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2');">
-                    <button class="quick-view" data-id="4">QUICK VIEW</button>
-                </div>
-                <div class="product-info">
-                    <h3>Eucalyptus Mint Bath Salts</h3>
-                    <p>Invigorating blend to clear sinuses and relax tired muscles.</p>
-                    <div class="price">R269.99</div>
-                    <button class="btn add-to-cart" data-id="4">Add to Cart</button>
+            <div class="featured-card">
+                <div class="featured-img" style="background-image: url('https://i.pinimg.com/736x/4a/bb/6d/4abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="featured-info">
+                    <h3>Jelly Dessert</h3>
+                    <div class="price">R250.00</div>
+                    <a href="products.html" class="btn">View All</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="testimonial-slider">
-            <div class="testimonial active">
-                <p>"These candles transformed my home! The Amber Noir scent is absolutely intoxicating. Best purchase ever."</p>
-                <span>- Nomzamo K., Cape Town</span>
-            </div>
-            <div class="testimonial">
-                <p>"The Lavender Dream bath salts are heavenly. I use them every Sunday for my self-care ritual. Worth every rand!"</p>
-                <span>- Thabo M., Johannesburg</span>
-            </div>
-            <div class="testimonial">
-                <p>"I gifted the Citrus Bloom candle to my wife and she hasn't stopped raving about it. The packaging is so luxurious!"</p>
-                <span>- David L., Durban</span>
-            </div>
-            <div class="slider-controls">
-                <button class="prev-testimonial">❮</button>
-                <button class="next-testimonial">❯</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <h2 class="section-title">JOIN OUR LUXURY CIRCLE</h2>
-        <p>Subscribe for exclusive offers, new product launches, and self-care inspiration.</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Your email address" required>
-            <button type="submit">SUBSCRIBE</button>
-        </form>
-    </section>
-
-    <!-- Shopping Cart Modal -->
-    <div class="modal" id="cart-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Your Shopping Cart</h2>
-            <div class="cart-items">
-                <!-- Cart items will be added here dynamically -->
-            </div>
-            <div class="cart-total">
-                Total: R<span id="cart-total-amount">0.00</span>
-            </div>
-            <button class="checkout-btn">PROCEED TO CHECKOUT</button>
-        </div>
-    </div>
-
-    <!-- Quick View Modal -->
-    <div class="modal" id="quickview-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="quickview-content">
-                <!-- Product details will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-links">
-            <a href="#">Shipping Policy</a>
-            <a href="#">Returns</a>
-            <a href="#">Contact Us</a>
-            <a href="#">About ApexCore</a>
-            <a href="#">Stockists</a>
-        </div>
+    <footer>
         <p>&copy; 2023 ApexCore Luxe. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#">📱</a>
-            <a href="#">📷</a>
-            <a href="#">💻</a>
-        </div>
     </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-
-        // Testimonial Slider
-        const testimonials = document.querySelectorAll('.testimonial');
-        let currentTestimonial = 0;
-        
-        function showTestimonial(index) {
-            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-            testimonials[index].classList.add('active');
-        }
-        
-        document.querySelector('.next-testimonial').addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        });
-        
-        document.querySelector('.prev-testimonial').addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        });
-
-        // Shopping Cart
-        const cart = [];
-        const cartModal = document.getElementById('cart-modal');
-        const cartCount = document.querySelector('.cart-count');
-        const cartIcon = document.querySelector('.cart-icon');
-        const closeModal = document.querySelectorAll('.close-modal');
-        
-        // Add to Cart
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.getAttribute('data-id');
-                const product = getProductById(productId);
-                
-                const existingItem = cart.find(item => item.id === productId);
-                if (existingItem) {
-                    existingItem.quantity++;
-                } else {
-                    cart.push({
-                        id: productId,
-                        name: product.name,
-                        price: product.price,
-                        image: product.image,
-                        quantity: 1
-                    });
-                }
-                
-                updateCart();
-            });
-        });
-        
-        // Get Product Data
-        function getProductById(id) {
-            const products = {
-                '1': {
-                    name: 'Amber Noir Candle',
-                    price: 349.99,
-                    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd'
-                },
-                '2': {
-                    name: 'Lavender Dream Bath Salts',
-                    price: 249.99,
-                    image: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2'
-                },
-                '3': {
-                    name: 'Citrus Bloom Candle',
-                    price: 299.99,
-                    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd'
-                },
-                '4': {
-                    name: 'Eucalyptus Mint Bath Salts',
-                    price: 269.99,
-                    image: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2'
-                }
-            };
-            return products[id];
-        }
-        
-        // Update Cart UI
-        function updateCart() {
-            const cartItems = document.querySelector('.cart-items');
-            const cartTotal = document.getElementById('cart-total-amount');
-            
-            cartItems.innerHTML = '';
-            let total = 0;
-            let itemCount = 0;
-            
-            cart.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.className = 'cart-item';
-                itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <div>
-                        <h3>${item.name}</h3>
-                        <p>R${item.price.toFixed(2)} × ${item.quantity}</p>
-                    </div>
-                    <div>
-                        <p>R${(item.price * item.quantity).toFixed(2)}</p>
-                    </div>
-                `;
-                cartItems.appendChild(itemElement);
-                
-                total += item.price * item.quantity;
-                itemCount += item.quantity;
-            });
-            
-            cartTotal.textContent = total.toFixed(2);
-            cartCount.textContent = itemCount;
-        }
-        
-        // Toggle Cart Modal
-        cartIcon.addEventListener('click', () => {
-            cartModal.style.display = 'block';
-        });
-        
-        closeModal.forEach(button => {
-            button.addEventListener('click', () => {
-                cartModal.style.display = 'none';
-                document.getElementById('quickview-modal').style.display = 'none';
-            });
-        });
-        
-        window.addEventListener('click', (e) => {
-            if (e.target === cartModal || e.target === document.getElementById('quickview-modal')) {
-                cartModal.style.display = 'none';
-                document.getElementById('quickview-modal').style.display = 'none';
-            }
-        });
-
-        // Quick View
-        document.querySelectorAll('.quick-view').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.getAttribute('data-id');
-                const product = getProductById(productId);
-                const quickviewContent = document.getElementById('quickview-content');
-                
-                quickviewContent.innerHTML = `
-                    <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-                        <div style="flex: 1; min-width: 300px;">
-                            <div style="height: 400px; background: url('${product.image}') center/cover;"></div>
-                        </div>
-                        <div style="flex: 1; min-width: 300px;">
-                            <h2>${product.name}</h2>
-                            <div style="font-size: 1.5rem; color: var(--gold); margin: 1rem 0;">R${product.price.toFixed(2)}</div>
-                            <p>${document.querySelector(`.product-card[data-id="${productId}"] p`).textContent}</p>
-                            <button class="btn add-to-cart" data-id="${productId}" style="margin-top: 1rem;">Add to Cart</button>
-                        </div>
-                    </div>
-                `;
-                
-                document.getElementById('quickview-modal').style.display = 'block';
-            });
-        });
-
-        // Newsletter Form
-        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for subscribing! You\'ll receive our next newsletter soon.');
-            e.target.reset();
-        });
-    </script>
 </body>
 </html>

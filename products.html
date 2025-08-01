@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexCore Luxe | Luxury Scented Candles & Bath Salts</title>
+    <title>Our Products | ApexCore Luxe</title>
     <style>
-        /* Modern Luxury Style */
         :root {
             --gold: #d4af37;
-            --cream: #f5f0e6;
+            --cream: #f9f5f0;
             --charcoal: #2a2a2a;
-            --taupe: #8b786d;
         }
         
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Playfair Display', serif;
             background: var(--cream);
             color: var(--charcoal);
             margin: 0;
             line-height: 1.6;
         }
         
-        /* Header */
         header {
             background: var(--charcoal);
-            color: white;
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -35,9 +31,23 @@
         }
         
         .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-top {
             font-size: 1.8rem;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
             color: var(--gold);
+            font-weight: 700;
+        }
+        
+        .logo-bottom {
+            font-size: 0.9rem;
+            letter-spacing: 8px;
+            color: white;
+            margin-top: -5px;
         }
         
         nav a {
@@ -45,7 +55,6 @@
             text-decoration: none;
             margin: 0 1rem;
             font-weight: 300;
-            letter-spacing: 1px;
             transition: color 0.3s;
         }
         
@@ -53,79 +62,34 @@
             color: var(--gold);
         }
         
-        /* Hero Section */
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1594035910387-fea47794261f');
+        .products-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://i.pinimg.com/736x/5a/6b/6d/5a6b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg');
             background-size: cover;
             background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 8rem 10%;
             text-align: center;
             color: white;
-            padding: 0 10%;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 5px;
+        .products-header h1 {
+            font-size: 3rem;
         }
         
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            background: var(--gold);
-            color: var(--charcoal);
-            padding: 1rem 2.5rem;
-            border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn:hover {
-            background: white;
-            transform: translateY(-3px);
-        }
-        
-        /* Products Section */
-        .products {
+        .catalogue {
             padding: 5rem 10%;
         }
         
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: var(--gold);
-            margin: 1rem auto;
-        }
-        
-        .product-category {
-            margin-bottom: 4rem;
+        .category-title {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
         }
         
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
         
@@ -139,7 +103,6 @@
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .product-img {
@@ -166,224 +129,252 @@
         }
         
         .product-info h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
         
         .product-info p {
             color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-        
-        .product-details {
-            display: flex;
-            gap: 1rem;
-            color: #888;
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            min-height: 40px;
         }
         
         .price {
             font-weight: 700;
             color: var(--gold);
             font-size: 1.3rem;
-            margin: 1rem 0;
         }
         
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1rem;
-            margin-left: 0.5rem;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            background: var(--charcoal);
-            color: white;
-            padding: 4rem 10%;
-            text-align: center;
-        }
-        
-        .testimonial {
-            max-width: 800px;
-            margin: 0 auto;
-            font-style: italic;
-            font-size: 1.2rem;
-        }
-        
-        .testimonial-author {
-            margin-top: 1rem;
+        .btn {
+            background: var(--gold);
+            color: var(--charcoal);
+            padding: 0.8rem 1.5rem;
+            border: none;
             font-weight: 600;
-            color: var(--gold);
+            margin-top: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
         }
         
-        /* Footer */
         footer {
             background: var(--charcoal);
             color: white;
             text-align: center;
             padding: 3rem;
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        
-        .social-icons {
-            margin-top: 1rem;
-        }
-        
-        .social-icons a {
-            color: white;
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            nav a {
-                margin: 0 0.5rem;
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="logo">APEXCORE LUXE</div>
+        <div class="logo">
+            <div class="logo-top">APEXCORE</div>
+            <div class="logo-bottom">LUXURY WITHIN</div>
+        </div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#candles">Candles</a>
-            <a href="#bath-salts">Bath Salts</a>
-            <a href="#about">About</a>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>ELEVATE YOUR SPACE</h1>
-        <p>Handcrafted scented candles and artisanal bath salts designed to transform your home into a sanctuary of luxury and relaxation.</p>
-        <a href="#candles" class="btn">SHOP NOW</a>
+    <section class="products-header">
+        <h1>Our Candle Collection</h1>
+        <p>Handcrafted with premium ingredients</p>
     </section>
 
-    <!-- Candles Section -->
-    <section class="products" id="candles">
-        <h2 class="section-title">SCENTED CANDLES</h2>
-        
+    <section class="catalogue">
+        <h2 class="category-title">Classic Candles</h2>
         <div class="product-grid">
-            <!-- Amber Noir Candle -->
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd')">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/8a/7b/6d/8a7b6d5c5e5e5e5e5e5e5e5e5e5e.jpg')">
                     <span class="product-badge">BESTSELLER</span>
                 </div>
                 <div class="product-info">
-                    <h3>Amber Noir</h3>
-                    <p>A rich blend of amber, vanilla, and sandalwood for a warm, inviting atmosphere.</p>
-                    <div class="product-details">
-                        <span>🕯️ 60+ hour burn</span>
-                        <span>📏 8oz glass</span>
-                    </div>
-                    <div class="price">R349.99 <span class="original-price">R399.99</span></div>
+                    <h3>Twirl Candle</h3>
+                    <p>Elegant spiral design with long-lasting burn</p>
+                    <div class="price">R60.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
             </div>
             
-            <!-- Citrus Bloom Candle -->
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd')">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/9a/8b/6d/9a8b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="product-info">
+                    <h3>Coned V-Shaped</h3>
+                    <p>Modern geometric design</p>
+                    <div class="price">R49.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/7a/4b/6d/7a4b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">COLORS</span>
+                </div>
+                <div class="product-info">
+                    <h3>Rose Candles</h3>
+                    <p>Available in different colors</p>
+                    <div class="price">R49.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/6a/5b/6d/6a5b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="product-info">
+                    <h3>Pillar Candles</h3>
+                    <p>Classic long-burning design</p>
+                    <div class="price">R130.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/5a/6b/6d/5a6b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">COLORS</span>
+                </div>
+                <div class="product-info">
+                    <h3>Ribbed Pillar</h3>
+                    <p>Textured design in different colors</p>
+                    <div class="price">R120.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/4a/7b/6d/4a7b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">ROMANTIC</span>
+                </div>
+                <div class="product-info">
+                    <h3>Heart Shaped</h3>
+                    <p>Dimpled heart scented candle</p>
+                    <div class="price">R69.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/3a/8b/6d/3a8b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">SCENTED</span>
+                </div>
+                <div class="product-info">
+                    <h3>Bunny Candles</h3>
+                    <p>Adorable bunny scented candles</p>
+                    <div class="price">R59.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/2a/9b/6d/2a9b6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">THERAPY</span>
+                </div>
+                <div class="product-info">
+                    <h3>Yoga Calm</h3>
+                    <p>Perfect for meditation</p>
+                    <div class="price">R250.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="category-title">Therapeutic Candles</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/1a/ab/6d/1aab6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">BESTSELLER</span>
+                </div>
+                <div class="product-info">
+                    <h3>Massaging</h3>
+                    <p>Therapy candles with skin oils</p>
+                    <div class="price">R300.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/0a/bb/6d/0abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">UNIQUE</span>
+                </div>
+                <div class="product-info">
+                    <h3>Knot Candles</h3>
+                    <p>Available in different designs</p>
+                    <div class="price">R150.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/9a/ab/6d/9aab6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="product-info">
+                    <h3>Rose in a Jar</h3>
+                    <p>Reusable glass jar</p>
+                    <div class="price">R189.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/8a/bb/6d/8abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
                     <span class="product-badge">NEW</span>
                 </div>
                 <div class="product-info">
-                    <h3>Citrus Bloom</h3>
-                    <p>An energizing mix of grapefruit, lemon, and orange blossom for a fresh ambiance.</p>
-                    <div class="product-details">
-                        <span>🕯️ 55+ hour burn</span>
-                        <span>📏 6oz glass</span>
-                    </div>
-                    <div class="price">R299.99</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bath Salts Section -->
-    <section class="products" id="bath-salts">
-        <h2 class="section-title">BATH SALTS</h2>
-        
-        <div class="product-grid">
-            <!-- Lavender Dream Bath Salts -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2')">
-                    <span class="product-badge">BESTSELLER</span>
-                </div>
-                <div class="product-info">
-                    <h3>Lavender Dream</h3>
-                    <p>Pure relaxation with lavender essential oils and Epsom salts to soothe muscles.</p>
-                    <div class="product-details">
-                        <span>🧴 500g jar</span>
-                        <span>🛁 10+ soaks</span>
-                    </div>
-                    <div class="price">R249.99</div>
+                    <h3>Matcha Latte</h3>
+                    <p>Soothing green tea scent</p>
+                    <div class="price">R210.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
             </div>
             
-            <!-- Eucalyptus Mint Bath Salts -->
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2')">
-                    <span class="product-badge">SEASONAL</span>
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/7a/bb/6d/7abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="product-info">
+                    <h3>Bubble Candle</h3>
+                    <p>Fun bubbly texture</p>
+                    <div class="price">R50.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/6a/bb/6d/6abb6d5c5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="product-info">
+                    <h3>Sea Shell</h3>
+                    <p>Ocean-inspired design</p>
+                    <div class="price">R50.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/5a/bb/6d/5abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')"></div>
+                <div class="product-info">
+                    <h3>Heart Bubble</h3>
+                    <p>Romantic heart-shaped</p>
+                    <div class="price">R50.00</div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.pinimg.com/736x/4a/bb/6d/4abb6d5c5e5e5e5e5e5e5e5e5e5e5e.jpg')">
+                    <span class="product-badge">ARTISTIC</span>
                 </div>
                 <div class="product-info">
-                    <h3>Eucalyptus Mint</h3>
-                    <p>Invigorating blend to clear sinuses and relax tired muscles.</p>
-                    <div class="product-details">
-                        <span>🧴 450g pouch</span>
-                        <span>🛁 8-10 soaks</span>
-                    </div>
-                    <div class="price">R269.99</div>
+                    <h3>Jelly Dessert</h3>
+                    <p>Creative dessert-inspired</p>
+                    <div class="price">R250.00</div>
                     <button class="btn">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="testimonial">
-            <p>"The Amber Noir candle fills my entire home with the most luxurious scent. I've received countless compliments from guests!"</p>
-            <div class="testimonial-author">- Nomzamo K., Cape Town</div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <a href="#">Shipping</a>
-            <a href="#">Returns</a>
-            <a href="#">Contact</a>
-            <a href="#">FAQ</a>
-        </div>
         <p>&copy; 2023 ApexCore Luxe. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#">📱</a>
-            <a href="#">📷</a>
-            <a href="#">💻</a>
-        </div>
     </footer>
 </body>
 </html>
