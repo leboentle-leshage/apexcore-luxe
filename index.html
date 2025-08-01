@@ -3,195 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexCore Luxe | Luxury Scented Candles</title>
+    <title>ApexCore Luxe | Luxury Scented Candles (ZAR)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #d4a373;
-            --cream: #f9f5f0;
-            --charcoal: #2a2a2a;
+            --gold: #D4AF37;
+            --black: #121212;
+            --cream: #F5F0E6;
         }
-        
         body {
-            font-family: 'Georgia', serif;
-            background: var(--cream);
-            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
-            line-height: 1.6;
+            background: var(--cream);
+            color: var(--black);
         }
-        
-        header {
-            background: var(--charcoal);
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--gold);
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--gold);
-        }
-        
         .hero {
+            background: url('https://images.unsplash.com/photo-1603394630301-0ab365f354ce') center/cover;
             height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('YOUR_HERO_IMAGE_URL');
-            background-size: cover;
-            background-position: center;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
             color: white;
-            padding: 0 10%;
+            position: relative;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
         }
-        
+        .hero-content {
+            z-index: 1;
+        }
         .btn {
             background: var(--gold);
-            color: var(--charcoal);
-            padding: 1rem 2.5rem;
+            color: var(--black);
+            padding: 12px 30px;
             border: none;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
         }
-        
-        .btn:hover {
-            background: white;
-            transform: translateY(-3px);
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
         }
-        
-        .featured {
-            padding: 5rem 10%;
+        .product-card {
+            width: 300px;
             text-align: center;
         }
-        
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .featured-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .featured-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .featured-img {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .featured-info {
-            padding: 1.5rem;
-        }
-        
-        .featured-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
         .price {
             color: var(--gold);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-        
-        footer {
-            background: var(--charcoal);
-            color: white;
-            padding: 3rem;
-            text-align: center;
-        }
-        
-        .contact-info {
-            margin: 1rem 0;
+            font-weight: bold;
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">APEXCORE LUXE</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Handcrafted Luxury Candles</h1>
-        <p>Premium scented candles designed to elevate your space</p>
-        <a href="products.html" class="btn">Shop Collection</a>
-    </section>
-
-    <section class="featured">
-        <h2>Featured Candles</h2>
-        <div class="featured-grid">
-            <div class="featured-card">
-                <div class="featured-img" style="background-image: url('YOUR_IMAGE_URL_1')"></div>
-                <div class="featured-info">
-                    <h3>Twirl Candle</h3>
-                    <div class="price">R60.00</div>
-                    <a href="products.html" class="btn">View All</a>
-                </div>
-            </div>
-            
-            <div class="featured-card">
-                <div class="featured-img" style="background-image: url('YOUR_IMAGE_URL_2')"></div>
-                <div class="featured-info">
-                    <h3>Massaging Candle</h3>
-                    <div class="price">R300.00</div>
-                    <a href="products.html" class="btn">View All</a>
-                </div>
-            </div>
-            
-            <div class="featured-card">
-                <div class="featured-img" style="background-image: url('YOUR_IMAGE_URL_3')"></div>
-                <div class="featured-info">
-                    <h3>Jelly Dessert</h3>
-                    <div class="price">R250.00</div>
-                    <a href="products.html" class="btn">View All</a>
-                </div>
-            </div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem;">ApexCore Luxe</h1>
+            <p>Handcrafted Luxury Candles | Made in South Africa</p>
+            <button class="btn">SHOP NOW</button>
         </div>
-    </section>
+    </div>
 
-    <footer id="contact">
-        <h3>Contact Us</h3>
-        <div class="contact-info">
-            <p>Email: Info@apexcoreluxe.co.za</p>
-            <p>Phone: 064 708 0970</p>
+    <div class="products">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f" width="250" alt="Vanilla Candle">
+            <h3>Serenity Vanilla</h3>
+            <p class="price">R 349.99</p>
+            <button class="btn">VIEW DETAILS</button>
         </div>
-        <p>&copy; 2023 ApexCore Luxe. All rights reserved.</p>
-    </footer>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1580325934019-509423664a51" width="250" alt="Sandalwood Candle">
+            <h3>Mystic Sandalwood</h3>
+            <p class="price">R 349.99</p>
+            <button class="btn">VIEW DETAILS</button>
+        </div>
+    </div>
 </body>
 </html>
