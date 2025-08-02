@@ -1,192 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products | ApexCore Luxe</title>
-    <style>
-        :root {
-            --gold: #d4a373;
-            --cream: #f9f5f0;
-            --charcoal: #2a2a2a;
-        }
-        
-        body {
-            font-family: 'Georgia', serif;
-            background: var(--cream);
-            color: var(--charcoal);
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: var(--charcoal);
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--gold);
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--gold);
-        }
-        
-        .products-header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('YOUR_CATALOGUE_HERO_IMAGE');
-            background-size: cover;
-            background-position: center;
-            padding: 8rem 10%;
-            text-align: center;
-            color: white;
-        }
-        
-        .products-header h1 {
-            font-size: 3rem;
-        }
-        
-        .catalogue {
-            padding: 5rem 10%;
-        }
-        
-        .category-title {
-            font-size: 2rem;
-            margin: 3rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gold);
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .product-img {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-        }
-        
-        .product-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .price {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-        
-        .btn {
-            background: var(--gold);
-            color: var(--charcoal);
-            padding: 0.8rem 1.5rem;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-block;
-        }
-        
-        footer {
-            background: var(--charcoal);
-            color: white;
-            padding: 3rem;
-            text-align: center;
-        }
-        
-        .contact-info {
-            margin: 1rem 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="logo">APEXCORE LUXE</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<!-- Scented Candles Section -->
+<section class="product-category">
+  <h2>Scented Candles</h2>
+  
+  <div class="product-card">
+    <h3>Amber Noir Candle</h3>
+    <p>Rich blend of amber, vanilla, and sandalwood for a warm, inviting atmosphere.</p>
+    <p class="price">R349.99</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
 
-    <section class="products-header">
-        <h1>Our Candle Collection</h1>
-        <p>Handcrafted with premium ingredients</p>
-    </section>
+  <div class="product-card">
+    <h3>Citrus Bloom Candle</h3>
+    <p>An energizing mix of grapefruit, lemon, and orange blossom for a fresh ambiance.</p>
+    <p class="price">R299.99</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
 
-    <section class="catalogue">
-        <h2 class="category-title">Classic Candles</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('YOUR_IMAGE_URL_1')"></div>
-                <div class="product-info">
-                    <h3>Twirl Candle</h3>
-                    <p>Elegant spiral design with long-lasting burn</p>
-                    <div class="price">R60.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <!-- Repeat for all 16 products -->
-            <!-- Example for one more product -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('YOUR_IMAGE_URL_2')"></div>
-                <div class="product-info">
-                    <h3>Massaging Candle</h3>
-                    <p>Therapy candles with skin oils</p>
-                    <div class="price">R300.00</div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            </div>
-            
-            <!-- Add remaining 14 products following same pattern -->
-        </div>
-        
-        <h2 class="category-title">Therapeutic Candles</h2>
-        <div class="product-grid">
-            <!-- Add therapeutic candle products here -->
-        </div>
-    </section>
+  <!-- Add more candles as needed -->
+</section>
 
-    <footer id="contact">
-        <h3>Contact Us</h3>
-        <div class="contact-info">
-            <p>Email: Info@apexcoreluxe.co.za</p>
-            <p>Phone: 064 708 0970</p>
-        </div>
-        <p>&copy; 2023 ApexCore Luxe. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+<!-- Bath Salts Section -->
+<section class="product-category">
+  <h2>Bath Salts</h2>
+  
+  <div class="product-card">
+    <h3>Lavender Dream Bath Salts</h3>
+    <p>Pure relaxation with lavender essential oils and Epsom salts to soothe muscles.</p>
+    <p class="price">R249.99</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <h3>Eucalyptus Mint Bath Salts</h3>
+    <p>Invigorating blend to clear sinuses and relax muscles.</p>
+    <p class="price">R269.99</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+</section>

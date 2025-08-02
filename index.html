@@ -1,91 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexCore Luxe | Luxury Scented Candles (ZAR)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #121212;
-            --cream: #F5F0E6;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            background: var(--cream);
-            color: var(--black);
-        }
-        .hero {
-            background: url('https://images.unsplash.com/photo-1603394630301-0ab365f354ce') center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-        }
-        .hero-content {
-            z-index: 1;
-        }
-        .btn {
-            background: var(--gold);
-            color: var(--black);
-            padding: 12px 30px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 50px;
-        }
-        .product-card {
-            width: 300px;
-            text-align: center;
-        }
-        .price {
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="hero">
-        <div class="hero-content">
-            <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem;">ApexCore Luxe</h1>
-            <p>Handcrafted Luxury Candles | Made in South Africa</p>
-            <button class="btn">SHOP NOW</button>
-        </div>
+<!-- Featured Products Section -->
+<section class="featured">
+  <h2>Our Bestsellers</h2>
+  
+  <div class="products">
+    <!-- Amber Noir Candle -->
+    <div class="product-card">
+      <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd');"></div>
+      <div class="product-info">
+        <h3>Amber Noir Candle</h3>
+        <p>Rich amber, vanilla & sandalwood blend</p>
+        <div class="price">R349.99</div>
+        <a href="products.html" class="btn">View Details</a>
+      </div>
     </div>
-
-    <div class="products">
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f" width="250" alt="Vanilla Candle">
-            <h3>Serenity Vanilla</h3>
-            <p class="price">R 349.99</p>
-            <button class="btn">VIEW DETAILS</button>
-        </div>
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1580325934019-509423664a51" width="250" alt="Sandalwood Candle">
-            <h3>Mystic Sandalwood</h3>
-            <p class="price">R 349.99</p>
-            <button class="btn">VIEW DETAILS</button>
-        </div>
+    
+    <!-- Lavender Bath Salts -->
+    <div class="product-card">
+      <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2');"></div>
+      <div class="product-info">
+        <h3>Lavender Dream Bath Salts</h3>
+        <p>Lavender essential oils & Epsom salts</p>
+        <div class="price">R249.99</div>
+        <a href="products.html" class="btn">View Details</a>
+      </div>
     </div>
-</body>
-</html>
+    
+    <!-- Citrus Bloom Candle -->
+    <div class="product-card">
+      <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd');"></div>
+      <div class="product-info">
+        <h3>Citrus Bloom Candle</h3>
+        <p>Grapefruit, lemon & orange blossom</p>
+        <div class="price">R299.99</div>
+        <a href="products.html" class="btn">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
