@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexCore Luxe | Luxury Bath Salts & Scented Candles</title>
+    <title>Our Products | ApexCore Luxe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -71,8 +71,8 @@
             color: var(--accent);
         }
         
-        .hero {
-            height: 100vh;
+        .products-header {
+            height: 50vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
@@ -81,18 +81,72 @@
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 0 2rem;
+            padding-top: 80px;
         }
         
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .products-header h1 {
+            font-size: 3.5rem;
         }
         
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
+        .products-section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-img {
+            height: 350px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.8rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .product-info p {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+        
+        .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--dark);
+            display: block;
+            margin-bottom: 1.5rem;
         }
         
         .btn {
@@ -106,92 +160,14 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            width: 100%;
+            text-align: center;
         }
         
         .btn:hover {
             background-color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about {
-            padding: 6rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--dark);
-        }
-        
-        .about p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: var(--dark);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .featured {
-            padding: 4rem 5%;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--dark);
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .product-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .product-img {
-            height: 300px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-        }
-        
-        .product-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .product-info p {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        
-        .price {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--dark);
         }
         
         footer {
@@ -232,15 +208,47 @@
             margin-top: 2rem;
             color: rgba(255,255,255,0.7);
         }
+        
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+        
+        .category-btn.active {
+            font-weight: 600;
+        }
+        
+        .category-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 2px;
+            background-color: var(--accent);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="#" class="logo">ApexCore<span>Luxe</span></a>
+            <a href="index.html" class="logo">ApexCore<span>Luxe</span></a>
             <div class="nav-links">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <a href="products.html">Products</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
@@ -248,29 +256,27 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Elevate Your Senses</h1>
-            <p>Discover our exquisite collection of artisanal bath salts and scented candles, crafted to transform your space into a sanctuary of relaxation and luxury.</p>
-            <a href="products.html" class="btn">Shop Now</a>
+    <section class="products-header">
+        <h1>Our Luxury Collection</h1>
+    </section>
+
+    <section class="products-section">
+        <div class="category-filter">
+            <button class="category-btn active">All Products</button>
+            <button class="category-btn">Bath Salts</button>
+            <button class="category-btn">Scented Candles</button>
         </div>
-    </section>
-
-    <section class="about">
-        <h2>Handcrafted Luxury</h2>
-        <p>At ApexCore Luxe, we believe in the power of sensory experiences to elevate everyday moments. Our products are carefully crafted using the finest natural ingredients, designed to indulge your senses and create moments of tranquility in your daily routine.</p>
-        <p>Each item is made with intention, blending premium essential oils, mineral-rich salts, and sustainable materials to deliver an unparalleled experience of luxury and well-being.</p>
-    </section>
-
-    <section class="featured">
-        <h2 class="section-title">Featured Products</h2>
+        
+        <h2 class="section-title">Premium Bath & Home Essentials</h2>
+        
         <div class="products-grid">
             <div class="product-card">
                 <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Lavender Dream Bath Salts" class="product-img">
                 <div class="product-info">
                     <h3>Lavender Dream Bath Salts</h3>
-                    <p>Soothing lavender and chamomile blend</p>
+                    <p>A soothing blend of lavender and chamomile to calm the mind and relax muscles. Infused with Epsom salts and Himalayan pink salt for ultimate relaxation.</p>
                     <span class="price">R 349</span>
+                    <a href="#" class="btn">Add to Cart</a>
                 </div>
             </div>
             
@@ -278,8 +284,9 @@
                 <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Citrus Bloom Candle" class="product-img">
                 <div class="product-info">
                     <h3>Citrus Bloom Candle</h3>
-                    <p>Energizing orange and grapefruit essence</p>
+                    <p>An energizing fusion of orange and grapefruit essential oils in a premium soy wax blend. 50-hour burn time in an elegant glass vessel.</p>
                     <span class="price">R 499</span>
+                    <a href="#" class="btn">Add to Cart</a>
                 </div>
             </div>
             
@@ -287,8 +294,39 @@
                 <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Eucalyptus Mist Bath Salts" class="product-img">
                 <div class="product-info">
                     <h3>Eucalyptus Mist Bath Salts</h3>
-                    <p>Invigorating eucalyptus and mint fusion</p>
+                    <p>Invigorating eucalyptus and mint fusion to clear sinuses and refresh the senses. With Dead Sea salts and magnesium flakes for muscle recovery.</p>
                     <span class="price">R 379</span>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Vanilla Noir Candle" class="product-img">
+                <div class="product-info">
+                    <h3>Vanilla Noir Candle</h3>
+                    <p>A rich, sophisticated blend of vanilla bean and tonka with hints of amber. Hand-poured in small batches for consistent quality and fragrance.</p>
+                    <span class="price">R 529</span>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1604176354204-92633abc7a1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Rose Quartz Bath Salts" class="product-img">
+                <div class="product-info">
+                    <h3>Rose Quartz Bath Salts</h3>
+                    <p>Romantic rose and geranium essential oils blended with pink Himalayan salt and actual crushed rose quartz crystals for a luxurious bathing experience.</p>
+                    <span class="price">R 429</span>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1580327344181-c1163234e5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Sandalwood Serenity Candle" class="product-img">
+                <div class="product-info">
+                    <h3>Sandalwood Serenity Candle</h3>
+                    <p>Warm sandalwood and patchouli with subtle floral notes create a grounding, meditative atmosphere. 100% natural coconut wax with wooden wick.</p>
+                    <span class="price">R 569</span>
+                    <a href="#" class="btn">Add to Cart</a>
                 </div>
             </div>
         </div>
@@ -306,5 +344,18 @@
             <p class="copyright">© 2023 ApexCore Luxe. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Simple category filter functionality
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelector('.category-btn.active').classList.remove('active');
+                this.classList.add('active');
+                
+                // In a real implementation, you would filter products here
+                // This is just a UI demonstration
+            });
+        });
+    </script>
 </body>
 </html>
